@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-bookings.css">
+  <title>Bookings</title>
+</head>
+<body>
+  <!-- off screen navigation menu -->
+
+    <ul class="navigation">
+      <li <a href="/home.html">HOME</a></li>
+      <li <a href="/services.html">SERVICES</a></li>
+      <li <a href="/bookings.html">BOOKINGS</a></li>
+      <li <a href="/recruitment.html">RECRUITMENT</a></li>
+    </ul>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger"></label>
+
+<div class="site-wrap">
+  <!-- header -->
+  <header>
+    <div class="top" >
+      <img src="images/logo.jpg" alt="Logo">
+      <ul class="list-items">
+        <li <a href="/home.html">HOME</a></li>
+        <li <a href="/services.html">SERVICES</a></li>
+        <li <a href="/bookings.html">BOOKINGS</a></li>
+        <li <a href="/recruitment.html">RECRUITMENT</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- main area -->
+  <div class="container">
+    <div class="slider-bookings">
+      <h1>GET IN TOUCH</h1>
+    </div>
+    <div class="middle">
+      <h2>BOOKINGS</h2>
+      <p>We will work with you to achieve your exact requirements.</p>
+        <p>For enquiries - no matter how big or small - please get in touch by completing the below form.</p>
+        <p>Alternatively, feel free to get in touch via telephone or email.
+          We would love to help you find what you're looking for.</p>
+          <span><p>T: (+44) 7851 313 617     /     E: neonjukeboxevents@gmail.com</p></span>
+
+      <!-- form -->
+      <?php
+  // define variables and set to empty values
+  $name = $lastName = $telepohne = $date = $venue = $comment = $website = "";
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $lastName = test_input($_POST["lastName"]);
+    $telephone = test_input($_POST["telephone"]);
+    $date = test_input($_POST["date"]);
+    $email = test_input($_POST["email"]);
+    $venue = test_input($_POST["venue"]);
+    $comment = test_input($_POST["comment"]);
+  }
+
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+  ?>
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <div class="formWrapper">
+      <div class="formWrapper-content">
+    <label>Full Name <span class="required">*</span></label>
+    <input type="text" name="field1" class="field-divided" placeholder="First" />
+    <br><br>
+    <input type="text" name="field2" class="field-divided1" placeholder="Last" /></li>
+    <br><br>
+    Telephone: <input type="text" name="telephone">
+    <br><br>
+    Date of Event: <input type="date" id="date" name="dateFrom" value="<?php echo date('Y-m-d'); ?>" />
+    <br><br>
+    E-mail: <input type="text" name="email">
+    <br><br>
+    Venue: <input type="text" name="venue">
+    <br><br>
+    Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+    <br><br>
+    <input type="submit" name="submit" value="Submit">
+    </div>
+ </div>
+  </form>
+</div>
+
+  <!-- footer -->
+  <footer>
+
+    <div class="contact-footer">
+      <div class="bottom">
+        <img src="images/logo.jpg" alt="Logo">
+        <ul class="list-items">
+          <li <a href="/home.html">HOME</a></li>
+          <li <a href="/services.html">SERVICES</a></li>
+          <li <a href="/bookings.html">BOOKINGS</a></li>
+          <li <a href="/recruitment.html">RECRUITMENT</a></li>
+        </ul>
+      </div>
+    <p>T: (+44) 7851 313 617     /     E: neonjukeboxevents@gmail.com</p>
+  </div>
+  </footer>
+  <!-- site wrap-->
+</div>
+</body>
+</html>

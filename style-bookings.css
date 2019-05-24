@@ -1,0 +1,57 @@
+.slider-bookings {
+  background-image: url("images/bookings/bookings-parallex.jpg");
+  height: 500px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slider-bookings h1 {
+  position: relative;
+  top: 20%;
+  font-family: acumin-pro-condensed;
+font-weight: 200;
+font-style: normal;
+font-size: 50px;
+letter-spacing: .17em;
+line-height: 1.2em;
+text-transform: uppercase;
+}
+.formWrapper {
+  padding: 15px;
+  display: flex;
+}
+.formWrapper-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0 8vw;
+  text-align: left;
+}
+.formWrapper-content input {
+  padding: 10px;
+}
+#date {
+  max-width: 200px;
+}
+.formWrapper-content input[type=submit] {
+  width: 100px;
+}
+span {
+  color: #ff9900;
+}
+.name {
+  display: inline;
+}
+.formWrapper-content .field-divided .field-divided1 {
+  width: 49%;
+}
+.formWrapper-content .field-divided {
+  float: left;
+}
+.formWrapper-content .field-divided1 {
+  float: right;
+}
